@@ -28,7 +28,8 @@ void largestarray(int arr[],int n)
 	
 	int max_till=0;
 	int element_traverse=0;
-	
+	//algo says that start from zero to all element but is got negative make sum =0; 
+	//then allow it to calculate sum after the negative value.
 	for(int i=0;i<n;i++)
 	{
 		element_traverse=element_traverse+arr[i];
