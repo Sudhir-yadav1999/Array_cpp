@@ -2,7 +2,8 @@ Largest Sum Contiguous Subarray
 --------------------------------
 Write an efficient program to find the sum of contiguous subarray within a one-dimensional array of numbers which has the largest sum.
 kadane-algorithm
-
+ex 
+{-2, -3, 4, -1, -2, 1, 5, -3}
 -------------------
 Kadane’s Algorithm:
 -------------------
