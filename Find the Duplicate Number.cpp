@@ -91,3 +91,54 @@ O(1)
 Here a case comes where 0 is also there then add one to all elements of array. 
 
 https://www.youtube.com/watch?v=HuZJqRDOPo0&ab_channel=GeeksforGeeks
+
+
+
+---------------------------
+ Hare and tortoise approach
+ --------------------------
+Input  : arr[] = {1, 4, 3, 4, 2} 
+Output : 4
+
+Input  : arr[] = {1, 3, 2, 1}
+Output : 1
+ // CPP code to find the repeated elements
+// in the array where every other is present once
+#include <iostream>
+using namespace std;
+
+// Function to find duplicate
+int findDuplicate(int arr[])
+{
+	// Find the intersection point of
+	// the slow and fast.
+	int slow = arr[0];
+	int fast = arr[0];
+	do
+	{
+		slow = arr[slow];
+		fast = arr[arr[fast]];
+	} while (slow != fast);
+
+	// Find the "entrance" to the cycle.
+	int ptr1 = arr[0];
+	int ptr2 = slow;
+	while (ptr1 != ptr2)
+	{
+		ptr1 = arr[ptr1];
+		ptr2 = arr[ptr2];
+	}
+
+	return ptr1;
+}
+
+// Driver code
+int main()
+{
+	int arr[] = { 1, 3, 2, 1 };
+	
+	cout << findDuplicate(arr) << endl;
+	
+	return 0;
+}
+
