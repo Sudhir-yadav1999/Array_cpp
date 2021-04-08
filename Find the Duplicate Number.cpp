@@ -122,7 +122,7 @@ int findDuplicate(int arr[])
 
 	// Find the "entrance" to the cycle.
 	int ptr1 = arr[0];
-	int ptr2 = slow;
+	int ptr2 = fast;
 	while (ptr1 != ptr2)
 	{
 		ptr1 = arr[ptr1];
