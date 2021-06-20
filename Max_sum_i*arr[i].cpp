@@ -112,3 +112,48 @@ int main()
 
     return 0;
 }
+
+
+
+
+
+=====================================================================
+        time complexity - 0(n2)
+        
+        #include<bits/stdc++.h>
+#include <stdio.h>
+
+using namespace std;
+
+int max_sum(int arr[],int n)
+{
+    int res=0;
+    int i,j;
+    for(i=0;i<n;i++)
+    {
+        int curr_sum=0;
+        
+        for(j=0;j<n;j++)
+        {
+            int index=(i+j)%n;
+            curr_sum=curr_sum+j*arr[index];
+        }
+        
+         res=max(res,curr_sum);
+    }
+    return res;
+    
+}
+
+int main()
+{
+   int sum=16;
+   int arr[]={1, 20, 2, 10};
+   int size=sizeof(arr)/sizeof(arr[0]);
+  
+   cout<<"Max sum of i*arr[i] after rotation ::"<<max_sum(arr,size);
+
+
+    return 0;
+}
+
